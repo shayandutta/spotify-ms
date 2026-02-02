@@ -21,7 +21,7 @@ async function requestValidator (req:Request, res:Response, next:NextFunction){
 
 async function isAuthenticated(req:Request, res:Response, next:NextFunction){
     try{
-        const token = req.headers.authorization as string;
+        const token = req.headers.token as string;
         if(!token){
             throw new AppError("Please login", StatusCodes.FORBIDDEN);
         }
